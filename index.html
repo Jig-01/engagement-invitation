@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abhishek &amp; Jigyasha — Our Engagement</title>
+  <meta name="description" content="Ring ceremony of Abhishek Priyadarshi and Jigyasha Kumari. Scratch to discover the date.">
+  <meta name="theme-color" content="#1a0a14">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Abhishek &amp; Jigyasha — Our Engagement">
+  <meta property="og:description" content="Two hearts. One beautiful beginning. Scratch to reveal the date.">
+  <meta property="og:image" content="assets/couple1.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Manrope:wght@300;400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  
+<div class="vintage-envelope-screen" id="envelope-screen">
+  <div class="envelope-intro">
+    <p class="envelope-eyebrow">A LETTER FROM OUR HEARTS</p>
+    <h2 class="envelope-heading">A Special Invitation</h2>
+    <p class="envelope-subtitle">Something beautiful awaits you</p>
+    
+    <div class="ganesh-blessing">
+      <img
+        src="assets/ganesha.png"
+        alt="Lord Ganesha"
+        class="ganesh-image"
+      />
+      <p>॥ श्री गणेशाय नमः ॥</p>
+    </div>
+
+
+    <button class="vintage-envelope" id="open-envelope"
+      aria-label="Open the engagement invitation">
+      <span class="envelope-paper"></span>
+      <span class="envelope-back"></span>
+      <span class="envelope-flap"></span>
+      <span class="envelope-front"></span>
+
+      <span class="envelope-address">
+        <span class="envelope-to">TO OUR DEAR ONES</span>
+        <span class="envelope-names">Abhishek <i>&</i> Jigyasha</span>
+        <span class="envelope-date">21 · 11 · 2026</span>
+      </span>
+
+      <span class="wax-seal">
+        <!-- <span class="wax-initials">A <i>&</i> J</span> -->
+        <img src="assets/logo.png" alt="Abhishek and Jigyasha seal" class="seal-img">
+      </span>
+    </button>
+
+  </div>
+</div>
+
+
+  <div class="grain" aria-hidden="true"></div>
+  <canvas id="celebration-canvas" aria-hidden="true"></canvas>
+  <audio id="bg-audio" preload="auto" loop>
+  <source src="assets/song.mp3" type="audio/mpeg">
+</audio>
+  <!-- TOP BAR -->
+  <div class="topbar">
+    
+    <a href="#hero" class="monogram" aria-label="AJ">
+       <img src="assets/aj-monogram.png" alt="Abhishek and Jigyasha monogram" class="monogram-img">
+    </a>
+    <div class="topbar-controls">
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button id="lang-en" class="lang-btn active" aria-pressed="true">EN</button>
+        <span aria-hidden="true">/</span>
+        <button id="lang-hi" class="lang-btn" aria-pressed="false">हिन्दी</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════
+       HERO
+  ══════════════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero-photo-stage">
+      <img src="assets/couple1.png" alt="Abhishek Priyadarshi and Jigyasha Kumari"
+           class="hero-photo" id="hero-photo" onerror="this.src='assets/couple2.png'">
+      <div class="hero-grade"></div>
+      <div class="hero-sweep" aria-hidden="true"></div>
+    </div>
+
+    <div class="hero-text-stage">
+      <div class="hero-label" data-i18n="hero_intro">AN INVITATION TO OUR NEXT CHAPTER</div>
+
+      <h1 class="hero-names" aria-label="Abhishek Priyadarshi and Jigyasha Kumari">
+        <span class="name n-groom" data-i18n="groom_name">Abhishek Priyadarshi</span>
+        <span class="name-heart" aria-hidden="true">♥</span>
+        <span class="name n-bride" data-i18n="bride_name">Jigyasha Kumari</span>
+      </h1>
+
+      <p class="hero-sub" data-i18n="hero_headline">Two hearts. One beautiful beginning.</p>
+
+      <!-- No date here — kept secret for the scratch reveal -->
+      <div class="hero-strip">
+        <span class="hero-event" data-i18n="hero_event_label">OUR RING CEREMONY</span>
+        <!-- <span class="hero-sep" aria-hidden="true">·</span>
+        <span class="hero-place">ARRAH, BIHAR</span> -->
+      </div>
+    </div>
+
+    <a href="#scratch-section" class="scroll-cue" aria-label="Scroll to discover">
+      <span class="scroll-txt">SCROLL</span>
+      <span class="scroll-line"></span>
+    </a>
+  </section>
+
+  <!-- ══════════════════════════════
+       SCRATCH REVEAL
+  ══════════════════════════════ -->
+  <section class="scratch-section" id="scratch-section">
+    <div class="scratch-wrap reveal-up">
+
+      <div class="scratch-lede">
+        <p class="eyebrow" data-i18n="scratch_badge">ONE LITTLE SECRET</p>
+        <h2 class="scratch-heading" data-i18n="scratch_title">Scratch to discover our day.</h2>
+        <p class="scratch-sub" data-i18n="scratch_subtitle">Drag your finger across the golden card below.</p>
+      </div>
+
+      <!--
+        SCRATCH CARD — landscape 16:9
+        Layer order (bottom → top):
+          1. .scratch-bg      — dark beautiful revealed background  [z-index: 1]
+          2. .scratch-content — text that gets revealed              [z-index: 2]
+          3. #scratch-canvas  — gold foil that gets scratched away   [z-index: 3]
+          4. .scratch-hint    — "drag to reveal" label               [z-index: 4]
+      -->
+      <div class="scratch-card" id="scratch-card">
+
+        <!-- Layer 1+2: Revealed content (always rendered, canvas sits on top) -->
+        <div class="scratch-bg" aria-hidden="true"></div>
+        <div class="scratch-content" id="revealed-invitation-body">
+          <p class="rev-eyebrow" data-i18n="revealed_header">THIS IS OUR DAY</p>
+          <h3 class="rev-date" data-i18n="revealed_date">21 NOVEMBER 2026</h3>
+          <div class="rev-rule" aria-hidden="true"></div>
+          <div class="rev-meta">
+            <div class="rev-cell">
+              <span class="rev-label">TIME</span>
+              <span class="rev-val" data-i18n="revealed_time">10:00 AM ONWARDS</span>
+            </div>
+            <!-- <span class="rev-dot" aria-hidden="true">·</span>
+            <div class="rev-cell">
+              <span class="rev-label">EVENT</span>
+              <span class="rev-val" data-i18n="revealed_event">OUR RING CEREMONY</span>
+            </div> -->
+          </div>
+          <p class="rev-msg" data-i18n="revealed_message">Save the date. Bring your smiles. Be part of our beginning.</p>
+          <a href="#" id="add-calendar-btn" class="rev-cta" data-i18n="add_calendar"
+             target="_blank" rel="noopener noreferrer">
+            ADD TO CALENDAR <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <!-- Layer 3: Gold foil canvas -->
+        <canvas id="scratch-canvas" aria-label="Scratch to reveal the date"></canvas>
+
+        <!-- Layer 4: Hint (sits over canvas, hides after first touch) -->
+        <!-- <div class="scratch-hint" id="scratch-hint" aria-hidden="true">
+          <span class="hint-pulse"></span>
+          <span data-i18n="scratch_hint">DRAG TO REVEAL</span>
+        </div> -->
+
+      </div>
+
+      <!-- <button id="quick-reveal-btn" class="bypass-btn" data-i18n="quick_reveal">
+        Or tap here to reveal instantly
+      </button> -->
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════
+       FAMILY
+  ══════════════════════════════ -->
+  <section class="family-section" id="family-section">
+    <div class="family-wrap">
+
+      <div class="family-hd reveal-up">
+        <span class="eyebrow dim" data-i18n="family_badge">THE TWO SIDES</span>
+        <h2 class="family-title" data-i18n="family_title">TWO FAMILIES.<br>ONE BEAUTIFUL BOND.</h2>
+        <p class="family-lead" data-i18n="family_subtitle">With the love and blessings of our parents, we begin this beautiful new chapter.</p>
+      </div>
+
+      <div class="family-grid">
+
+        <!-- Groom Card -->
+        <div class="fcard fcard--groom reveal-up">
+          <div class="fcard-stripe"></div>
+          <span class="fcard-tag" data-i18n="groom_card_label">GROOM'S FAMILY</span>
+          <h3 class="fcard-name" data-i18n="groom_name_full">Abhishek Priyadarshi</h3>
+          <div class="fcard-rule" aria-hidden="true"></div>
+          <div class="fcard-parents">
+            <div class="fcard-parent">
+              <span class="fp-role" data-i18n="label_father">Father</span>
+              <span class="fp-name" data-i18n="groom_father">Shri Shambhu Prasad</span>
+            </div>
+            <div class="fcard-parent">
+              <span class="fp-role" data-i18n="label_mother">Mother</span>
+              <span class="fp-name" data-i18n="groom_mother">Smt. Minu Devi</span>
+            </div>
+          </div>
+          <div class="fcard-glow" aria-hidden="true"></div>
+        </div>
+
+        <!-- Centre heart divider -->
+        <div class="family-mid reveal-up" aria-hidden="true">
+          <span class="mid-line"></span>
+          <span class="mid-heart">♥</span>
+          <span class="mid-line"></span>
+        </div>
+
+        <!-- Bride Card -->
+        <div class="fcard fcard--bride reveal-up">
+          <div class="fcard-stripe fcard-stripe--rose"></div>
+          <span class="fcard-tag" data-i18n="bride_card_label">BRIDE'S FAMILY</span>
+          <h3 class="fcard-name" data-i18n="bride_name_full">Jigyasha Kumari</h3>
+          <div class="fcard-rule" aria-hidden="true"></div>
+          <div class="fcard-parents">
+            <div class="fcard-parent">
+              <span class="fp-role" data-i18n="label_father">Father</span>
+              <span class="fp-name" data-i18n="bride_father">Shri Umesh Kumar</span>
+            </div>
+            <div class="fcard-parent">
+              <span class="fp-role" data-i18n="label_mother">Mother</span>
+              <span class="fp-name" data-i18n="bride_mother">Smt. Puja Gupta</span>
+            </div>
+          </div>
+          <div class="fcard-glow fcard-glow--rose" aria-hidden="true"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════
+       VENUE
+  ══════════════════════════════ -->
+  <section class="venue-section" id="venue-section">
+    <div class="venue-grid">
+
+      <div class="venue-text reveal-up">
+        <span class="eyebrow" data-i18n="venue_badge">THE DESTINATION</span>
+        <h2 class="venue-hl" data-i18n="venue_title">MEET US WHERE THE<br>CELEBRATION BEGINS.</h2>
+        <div class="venue-block">
+          <p class="venue-name" data-i18n="venue_name">Vision Royal Club Resort</p>
+          <p class="venue-tag" data-i18n="venue_event_tag">Ring Ceremony</p>
+          <p class="venue-addr" data-i18n="venue_address">Near DAV School, Ibrahim Nagar,<br>Dhanupara, Arrah, Bihar 802301</p>
+          <div class="venue-when">
+            <span data-i18n="venue_date_text">21 November 2026</span>
+            <!-- <span class="vw-sep" aria-hidden="true">/</span> -->
+            <!-- <span data-i18n="venue_time_text">10:00 AM onwards</span> -->
+          </div>
+          <a href="https://www.google.com/maps/search/?api=1&query=Vision+Royal+Club+Resort,+Near+DAV+School,+Ibrahim+Nagar,+Dhanupara,+Arrah,+Bihar+802301"
+             target="_blank" rel="noopener noreferrer" class="venue-btn" data-i18n="get_directions">
+            GET DIRECTIONS <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="venue-map reveal-up">
+        <iframe
+          src="https://maps.google.com/maps?q=Vision+Royal+Club+Resort,+Near+DAV+School,+Ibrahim+Nagar,+Dhanupara,+Arrah,+Bihar+802301&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+          title="Vision Royal Club Resort location"
+          aria-label="Map of Vision Royal Club Resort, Arrah"></iframe>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════
+       FINALE
+  ══════════════════════════════ -->
+  <footer class="finale" id="finale">
+    <div class="finale-bg" aria-hidden="true"></div>
+    <div class="finale-petals" aria-hidden="true">
+      <span class="fp-p"></span><span class="fp-p"></span><span class="fp-p"></span>
+      <span class="fp-p"></span><span class="fp-p"></span>
+    </div>
+    <div class="finale-inner reveal-up">
+      <img src="assets/aj-monogram.png" alt="Abhishek and Jigyasha monogram" class="monogram-img">
+      <h2 class="finale-quote" data-i18n="footer_quote">"Two hearts, one promise, a lifetime of love."</h2>
+      <p class="finale-msg" data-i18n="footer_message">Your blessings, smiles, and presence will make our special day even more beautiful.</p>
+      <div class="finale-sig">
+        <span class="finale-by" data-i18n="footer_closing">With love and excitement,</span>
+        <span class="finale-names" data-i18n="footer_names">Abhishek &amp; Jigyasha</span>
+      </div>
+      <p class="finale-credit" data-i18n="footer_credit">Made with love, for a day we will cherish forever.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
