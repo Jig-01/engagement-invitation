@@ -495,7 +495,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (audio) {
       audio.loop = true;
 
-      const startSong = 5;
+      const startSong = 30;
 
       if (audio.readyState >= 1 &&
           Number.isFinite(audio.duration) &&
@@ -527,4 +527,45 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1600);
   }, { once: true });
 });
+
+
+function initWeddingCountdown() {
+  const daysEl = document.getElementById("countdown-days");
+  const hoursEl = document.getElementById("countdown-hours");
+  const minutesEl = document.getElementById("countdown-minutes");
+  const secondsEl = document.getElementById("countdown-seconds");
+  const countdown = document.getElementById("wedding-countdown");
+
+  if (!daysEl || !hoursEl || !minutesEl || !secondsEl) return;
+
+  // 21 November 2026, 10:00 AM India time
+  const targetDate = new Date("2026-11-21T10:00:00+05:30").getTime();
+
+  function updateCountdown() {
+    const now = Date.now();
+    const difference = targetDate - now;
+
+    if (difference <= 0) {
+      countdown.innerHTML =
+        '<p class="countdown-title">OUR SPECIAL DAY IS HERE! ♡</p>';
+      clearInterval(timer);
+      return;
+    }
+
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((difference / (1000 * 60)) % 60);
+    const seconds = Math.floor((difference / 1000) % 60);
+
+    daysEl.textContent = String(days).padStart(2, "0");
+    hoursEl.textContent = String(hours).padStart(2, "0");
+    minutesEl.textContent = String(minutes).padStart(2, "0");
+    secondsEl.textContent = String(seconds).padStart(2, "0");
+  }
+
+  updateCountdown();
+  const timer = setInterval(updateCountdown, 1000);
+}
+
+document.addEventListener("DOMContentLoaded", initWeddingCountdown);
 
