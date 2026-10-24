@@ -460,6 +460,11 @@ body {
   font-weight: normal;
   white-space: nowrap;
 }
+.mukhiya-titles {
+  font-size: 0.92rem;
+  font-weight: normal;
+  white-space: nowrap;
+}
 
 /* Centre heart divider */
 .family-mid {
