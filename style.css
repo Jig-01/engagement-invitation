@@ -456,13 +456,15 @@ body {
 }
 
 .mukhiya-title {
-  font-size: 1rem;
+  font-size: .92rem;
   font-weight: normal;
+  letter-spacing: 0;
   white-space: nowrap;
 }
 .mukhiya-titles {
-  font-size: 0.92rem;
+  font-size: .92rem;
   font-weight: normal;
+  letter-spacing: 0;
   white-space: nowrap;
 }
 
