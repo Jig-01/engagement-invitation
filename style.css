@@ -452,7 +452,7 @@ body {
 }
 .fp-name {
   font-family: var(--serif); letter-spacing: .05em; font-size: 1.3rem; font-weight: 400;
-  color: rgba(255,240,229,.78);
+  color: rgba(255,240,229,.78); white-space: pre-line;
 }
 
 .mukhiya-title {
