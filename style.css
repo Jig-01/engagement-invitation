@@ -706,6 +706,9 @@ body {
   /* Family cards */
   .fcard { padding: 1.8rem 1.4rem; border-radius: 16px; }
   .fcard-name { font-size: 2rem; }
+  .fcard-parent {
+    min-width: 0;
+  }
   .fp-name { font-size: 1.3rem; }
 
   .family-hd { margin-bottom: 3rem; }
