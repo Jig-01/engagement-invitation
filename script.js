@@ -163,7 +163,7 @@ function initMusic() {
   audio.loop = true;
   audio.preload = 'auto';
 
-  //const startAt = 5; // Start song at 1:25
+  //const startAt=5; // Start song at 1:25
   let musicStarted = false;
 
   function startMusic() {
@@ -495,7 +495,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (audio) {
       audio.loop = true;
 
-      const startSong = 30;
+      const startSong = 90;
 
       if (audio.readyState >= 1 &&
           Number.isFinite(audio.duration) &&
