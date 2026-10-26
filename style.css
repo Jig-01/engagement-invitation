@@ -711,7 +711,7 @@ body {
   .fcard-parent {
     min-width: 0;
   }
-  .fp-name { font-size: 1.3rem; }
+  .fp-name { font-size: 1.1rem; }
 
   .family-hd { margin-bottom: 3rem; }
   .family-title { font-size: clamp(1.8rem, 7vw, 2.8rem); }
