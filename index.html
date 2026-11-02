@@ -33,6 +33,11 @@
       <p>॥ श्री गणेशाय नमः ॥</p>
     </div>
 
+    <div class="envelope-occasion">
+      <span class="occasion-name">नवारम्भः</span>
+      <span class="occasion-meaning">A Promise of Togetherness</span>
+    </div>
+
 
     <button class="vintage-envelope" id="open-envelope"
       aria-label="Open the engagement invitation">
@@ -48,7 +53,7 @@
       </span>
 
       <span class="wax-seal">
-        <!-- <span class="wax-initials">A <i>&</i> J</span> -->
+        
         <img src="assets/logo.png" alt="Abhishek and Jigyasha seal" class="seal-img">
       </span>
     </button>
@@ -102,8 +107,6 @@
       <!-- No date here — kept secret for the scratch reveal -->
       <div class="hero-strip">
         <span class="hero-event" data-i18n="hero_event_label">A LITTLE CLOSER TO FOREVER</span>
-        <!-- <span class="hero-sep" aria-hidden="true">·</span>
-        <span class="hero-place">ARRAH, BIHAR</span> -->
       </div>
     </div>
 
@@ -125,14 +128,6 @@
         
       </div>
 
-      <!--
-        SCRATCH CARD — landscape 16:9
-        Layer order (bottom → top):
-          1. .scratch-bg      — dark beautiful revealed background  [z-index: 1]
-          2. .scratch-content — text that gets revealed              [z-index: 2]
-          3. #scratch-canvas  — gold foil that gets scratched away   [z-index: 3]
-          4. .scratch-hint    — "drag to reveal" label               [z-index: 4]
-      -->
       <div class="scratch-card" id="scratch-card">
 
         <!-- Layer 1+2: Revealed content (always rendered, canvas sits on top) -->
@@ -146,11 +141,7 @@
               <span class="rev-label">TIME</span>
               <span class="rev-val" data-i18n="revealed_time">10:00 AM ONWARDS</span>
             </div>
-            <!-- <span class="rev-dot" aria-hidden="true">·</span>
-            <div class="rev-cell">
-              <span class="rev-label">EVENT</span>
-              <span class="rev-val" data-i18n="revealed_event">OUR RING CEREMONY</span>
-            </div> -->
+            
           </div>
           <p class="rev-msg" data-i18n="revealed_message">Save the date. Bring your smiles. Be part of our beginning.</p>
           <a href="#" id="add-calendar-btn" class="rev-cta" data-i18n="add_calendar"
@@ -196,17 +187,7 @@
         <!-- Layer 3: Gold foil canvas -->
         <canvas id="scratch-canvas" aria-label="Scratch to reveal the date"></canvas>
 
-        <!-- Layer 4: Hint (sits over canvas, hides after first touch) -->
-        <!-- <div class="scratch-hint" id="scratch-hint" aria-hidden="true">
-          <span class="hint-pulse"></span>
-          <span data-i18n="scratch_hint">DRAG TO REVEAL</span>
-        </div> -->
-
       </div>
-
-      <!-- <button id="quick-reveal-btn" class="bypass-btn" data-i18n="quick_reveal">
-        Or tap here to reveal instantly
-      </button> -->
     </div>
   </section>
 

@@ -1179,3 +1179,36 @@ body {
     letter-spacing: 0.5px;
   }
 }
+
+.envelope-occasion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  margin-top: 22px;
+  text-align: center;
+}
+
+.occasion-name {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: clamp(2.2rem, 6vw, 3.2rem);
+  font-weight: 600;
+  color: #a47b45;
+  letter-spacing: 2px;
+  line-height: 1.5;
+}
+
+.occasion-meaning {
+  font-size: 0.65rem;
+  letter-spacing: 3px;
+  color: #967b5c;
+  margin-bottom: 20px;
+}
+
+.occasion-couple {
+  margin-top: 5px;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #554333;
+  letter-spacing: 1px;
+}
