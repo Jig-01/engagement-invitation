@@ -153,7 +153,7 @@ body {
 
 .hero-label {
   font-family: var(--sans); font-size: .58rem; font-weight: 700;
-  letter-spacing: .22em; color: var(--gold); margin-bottom: 1.3rem;
+  letter-spacing: .12em; color: var(--gold); margin-bottom: 1.3rem;
   align-self: center;
   animation: fade-up .9s var(--expo) .4s both;
 }
@@ -212,24 +212,50 @@ body {
 .hero-place { color: rgba(255,240,229,.4); }
 
 .scroll-cue {
-  position: absolute; bottom: 2rem; right: 2.5rem; z-index: 3;
-  display: flex; flex-direction: column; align-items: center; gap: .4rem;
+  position: absolute;
+  bottom: 2rem;
+  left: 0;
+  right: 0;
+  z-index: 3;
+
+  width: fit-content;
+  margin-inline: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .45rem;
+
   text-decoration: none;
+  cursor: pointer;
   animation: fade-up .6s var(--expo) 1.7s both;
 }
+
 .scroll-txt {
-  font-family: var(--sans); font-size: .48rem; font-weight: 700;
-  letter-spacing: .22em; color: rgba(212,168,83,.5);
-  writing-mode: vertical-rl;
+  font-family: var(--sans);
+  font-size: .58rem;
+  font-weight: 500;
+  letter-spacing: .2em;
+  color: #f3dfe2;
+  writing-mode: horizontal-tb;
+  white-space: nowrap;
+  text-align: center;
 }
-.scroll-line {
-  width: 1px; height: 48px;
-  background: linear-gradient(to bottom, var(--gold), transparent);
-  animation: scroll-drop 2s ease-in-out infinite;
+
+.scroll-cue svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+  animation: scroll-arrow 1.5s ease-in-out infinite;
 }
-@keyframes scroll-drop {
-  0%,100% { transform: scaleY(1); transform-origin: top; opacity: 1; }
-  50%      { transform: scaleY(.4); transform-origin: bottom; opacity: .3; }
+.scroll-cue svg path {
+  fill: #f3dfe2;
+}
+
+@keyframes scroll-arrow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
 }
 
 /* ════════════════════════════════════════════════════════
@@ -293,7 +319,7 @@ body {
 
 .rev-eyebrow {
   font-family: var(--sans); font-size: .52rem; font-weight: 700;
-  letter-spacing: .28em; color: var(--gold);
+  letter-spacing: .12em; color: var(--gold);
 }
 .rev-date {
   font-family: var(--serif); font-style: italic;
@@ -433,7 +459,7 @@ body {
 
 .fcard-tag {
   display: block; font-family: var(--sans); font-size: .6rem; font-weight: 800; 
-  letter-spacing: .22em; color: var(--gold); margin-bottom: 1.2rem;
+  letter-spacing: .08em; color: var(--gold); margin-bottom: 1.2rem;
 }
 .fcard-name {
   font-family: var(--serif); font-style: italic; 
@@ -448,7 +474,7 @@ body {
 .fcard-parent { display: flex; flex-direction: column; gap: .3rem; }
 .fp-role {
   font-family: var(--sans); font-size: .6rem; font-weight: 900;
-  letter-spacing: .18em; color: var(--rose);
+  letter-spacing: .1em; color: var(--rose);
 }
 .fp-name {
   font-family: var(--serif); letter-spacing: .05em; font-size: 1.3rem; font-weight: 400;
@@ -516,7 +542,7 @@ body {
 }
 .venue-tag {
   font-family: var(--sans); font-size: .6rem; font-weight: 700;
-  letter-spacing: .2em; color: var(--rose); text-transform: uppercase;
+  letter-spacing: .05em; color: var(--rose); text-transform: uppercase;
 }
 .venue-addr { font-size: .8rem; color: rgba(255,240,229,.5); line-height: 1.75; letter-spacing: .03em; }
 .venue-when {
@@ -588,7 +614,7 @@ body {
 .finale-quote {
   font-family: var(--serif); font-style: italic;
   font-size: clamp(1.7rem, 3.8vw, 3.2rem); font-weight: 300;
-  color: var(--pearl); line-height: 1.25; max-width: 18ch;
+  color: var(--pearl); line-height: 1.25; max-width: 24ch;
 }
 .finale-msg {
   font-size: .8rem; letter-spacing: .05em; line-height: 1.95;
@@ -612,13 +638,13 @@ body {
    ════════════════════════════════════════════════════════ */
 .eyebrow {
   display: inline-block; font-family: var(--sans); font-size: .58rem;
-  font-weight: 700; letter-spacing: .24em; color: var(--gold); align-self: start;
+  font-weight: 700; letter-spacing: .12em; color: var(--gold); align-self: start;
 }
 .eyebrow.dim {color: var(--gold); }
 
  .eyebrow-des {
   display: inline-block; font-family: var(--sans); font-size: .62rem;
-  font-weight: 700; letter-spacing: .24em; color: var(--gold); padding-left: 0.5%;  
+  font-weight: 700; letter-spacing: .12em; color: var(--gold); padding-left: 0.5%;  
  }
 
 .reveal-up {
@@ -717,12 +743,12 @@ body {
   .family-title { font-size: clamp(1.8rem, 7vw, 2.8rem); }
   .eyebrow {
   display: inline-block; font-family: var(--sans); font-size: .62rem;
-  font-weight: 700; letter-spacing: .24em; color: var(--gold); align-self:center; 
+  font-weight: 700; letter-spacing: .12em; color: var(--gold); align-self:center; 
  }
 
  .eyebrow-dim {
   display: inline-block; font-family: var(--sans); font-size: .62rem;
-  font-weight: 700; letter-spacing: .24em; color: var(--gold); align-self: center;  
+  font-weight: 700; letter-spacing: .12em; color: var(--gold); align-self: center;  
  }
 
 .scratch-card {
@@ -743,7 +769,7 @@ body {
   .venue-text { padding: 4rem 1.2rem 2.5rem; }
   .eyebrow-des {
   display: inline-block; font-family: var(--sans); font-size: .62rem;
-  font-weight: 700; letter-spacing: .24em; color: var(--gold); padding-left: 0.5%;  
+  font-weight: 700; letter-spacing: .12em; color: var(--gold); padding-left: 0.5%;  
  }
 
 
@@ -772,7 +798,7 @@ body {
   content: "";
   position: absolute;
   inset: 14px;
-  border: 1px solid rgba(218, 181, 104, 0.65);
+  border: 2px solid rgba(218, 181, 104, 0.65);
   outline: 1px solid rgba(218, 181, 104, 0.2);
   outline-offset: 5px;
   pointer-events: none;
@@ -820,7 +846,7 @@ body {
 .vintage-envelope {
   position: relative;
   display: block;
-  width: min(100%, 360px);
+  width: min(100%, 260px);
   aspect-ratio: 1.48 / 1;
   margin: 0 auto;
   padding: 0;
@@ -1202,7 +1228,7 @@ body {
   font-size: 0.65rem;
   letter-spacing: 3px;
   color: #967b5c;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 .occasion-couple {
@@ -1277,4 +1303,39 @@ body {
 .call-now-btn:hover {
   background: #e0c49b;
   transform: translateY(-2px);
+}
+
+/* ENVELOPE INSTRUCTION */
+.envelope-tap-hint {
+  margin: 15px 0 0;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  text-align: center;
+  color: #c5a477;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  line-height: 1.6;
+}
+
+.tap-arrow,
+.next-step-arrow {
+  font-size: 24px;
+  animation: guideBounce 1.5s ease-in-out infinite;
+}
+.tap-arrow {
+    display: inline-block;
+    animation: bounceDown 1.2s ease-in-out infinite;
+}
+
+@keyframes bounceDown {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(8px);
+    }
 }

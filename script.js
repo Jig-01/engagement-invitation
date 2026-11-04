@@ -26,7 +26,7 @@ const T = {
     bride_name:      'Jigyasha Kumari',
     hero_event_label:'A LITTLE CLOSER TO FOREVER',
     scratch_badge:   'A DATE WORTH THE WAIT',
-    scratch_title:   'Scratch here to uncover our forever moment.',
+    scratch_title:   'Scratch below to uncover our forever moment.',
     scratch_subtitle:'Drag your finger across the card below.',
     scratch_hint:    'DRAG TO REVEAL',
     canvas_main:     'DRAG TO UNCOVER OUR DAY',
@@ -61,7 +61,7 @@ const T = {
     venue_date_text: '21 November 2026',
     venue_time_text: '10:00 AM onwards',
     get_directions:  'GET DIRECTIONS',
-    footer_quote:    '\u201cTwo hearts, one promise, a lifetime of love.\u201d',
+    footer_quote:    '\u201cA friendship that found its way to forever.\u201d',
     footer_message:  'Your blessings, smiles, and presence will make our special day even more beautiful.',
     footer_closing:  'With love and excitement,',
     footer_names:    'Abhishek & Jigyasha',
@@ -117,14 +117,14 @@ const T = {
   venue_event_tag: 'रिंग सेरेमनी',
   venue_name: 'विज़न रॉयल क्लब रिसॉर्ट',
   venue_address: 'डीएवी स्कूल के पास, इब्राहिम नगर, धनुपरा, आरा, बिहार 802301',
-  venue_date_text: '21 नवंबर 2026',
+  venue_date_text: '21 नवंबर 2026, प्रातः 10:00 बजे से',
   venue_time_text: 'प्रातः 10:00 बजे से',
   get_directions: 'रास्ता देखें',
 
-  footer_quote: '“दो दिल, एक वादा, जीवन भर का प्यार।”',
+  footer_quote: '“दोस्ती से हमसफ़र तक, एक प्यारा सा सफ़र।”',
   footer_message: 'आपके आशीर्वाद, मुस्कान और उपस्थिति से हमारा यह खास दिन और भी यादगार बन जाएगा।',
   footer_closing: 'सप्रेम एवं उत्साह के साथ,',
-  footer_names: 'अभिषेक एवं जिज्ञासा',
+  footer_names: 'अभिषेक ♥ जिज्ञासा',
   footer_credit: 'प्रेमपूर्वक समर्पित, उस दिन के लिए जिसे हम जीवन भर संजोकर रखेंगे।'
 }
 };
