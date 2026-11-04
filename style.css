@@ -1324,5 +1324,5 @@ body {
 .tap-arrow,
 .next-step-arrow {
   font-size: 24px;
-  animation: guideBounce 1.5s ease-in-out infinite;
+  animation: guideBounce 1.2s ease-in-out infinite;
 }
